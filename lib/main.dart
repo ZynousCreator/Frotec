@@ -1,29 +1,26 @@
-
-import 'package:frotec/screens/color_schemes.g.dart';
-import 'package:frotec/screens/login/login.dart';
-import 'package:frotec/screens/home/home.dart';
-import 'package:frotec/screens/new_mobile/new_mobile.dart';
+import 'package:agenda_de_contatos/screens/home/home.dart';
+import 'package:agenda_de_contatos/screens/new_contact/new_contact.dart';
 import 'package:flutter/material.dart';
+import 'package:agenda_de_contatos/screens/color_schemes.g.dart';
 
 void main() {
   runApp(
     MaterialApp(
-      title: "Frotec",
+      title: "Agenda de contatos",
       routes: {
-        "/login": (context) => const Login(),
         "/": (context) => const Home(),
-        "/new": (context) => const NewMobile(),
+        "/new": (context) => const NewContact(),
       },
       initialRoute: "/",
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        useMaterial3: true,
         colorScheme: lightColorScheme,
-        useMaterial3: true,
       ),
-      darkTheme: ThemeData(
-        colorScheme: darkColorScheme,
-        useMaterial3: true,
-      ),
+      // darkTheme: ThemeData(
+      //   useMaterial3: true,
+      //   colorScheme: darkColorScheme,
+      // ),
     ),
   );
 }

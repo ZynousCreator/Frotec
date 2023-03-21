@@ -1,11 +1,12 @@
-import 'package:frotec/model/mobile.dart';
+import 'package:agenda_de_contatos/model/contact.dart';
 import 'package:flutter/material.dart';
 
 class ListItem extends StatefulWidget {
-  final Mobile mobile;
-  const ListItem({
+  Contact contact;
+
+  ListItem({
     super.key,
-    required this.mobile,
+    required this.contact,
   });
 
   @override
@@ -15,44 +16,41 @@ class ListItem extends StatefulWidget {
 class _ListItemState extends State<ListItem> {
   @override
   Widget build(BuildContext context) {
-    return Row(
-      //mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        IconButton(
-          icon: (widget.mobile.isFavorite)
-              ? const Icon(Icons.star)
-              : const Icon(Icons.star_outline),
+    return ListTile(
+      leading: IconButton(
+        icon: Icon(
+          (widget.contact.isFavorite) ? Icons.circle : Icons.circle_outlined,
           color: Theme.of(context).colorScheme.secondary,
-          onPressed: () {
-            setState(() {
-              widget.mobile.isFavorite = !widget.mobile.isFavorite;
-            });
-          },
-          tooltip: "Favoritar o contato",
         ),
-        const SizedBox(width: 24),
-        Row(
-          children: [
-            // CircleAvatar(
-            //   backgroundImage: AssetImage(widget.mobile.photoPath),
-            // ),
-            //const SizedBox(width: 16),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(widget.mobile.plateNumber,
-                    style: Theme.of(context).textTheme.titleMedium),
-                Text(widget.mobile.nickname,
-                    style: Theme.of(context).textTheme.labelLarge),
-              ],
-            ),
-          ],
-        ),
-        IconButton(
-          onPressed: () {Navigator.pushNamed(context, "/edit");},
-          icon: const Icon(Icons.chevron_right),
-        ),
-      ],
+        iconSize: 24,
+        onPressed: () {
+          setState(() {
+            widget.contact.isFavorite = !widget.contact.isFavorite;
+          });
+        },
+      ),
+      title: Row(
+        children: [
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                widget.contact.marca,
+                style: Theme.of(context).textTheme.titleMedium,
+              ),
+              Text(
+                widget.contact.plate,
+                style: Theme.of(context).textTheme.labelLarge,
+              ),
+            ],
+          ),
+        ],
+      ),
+      trailing: IconButton(
+        icon: const Icon(Icons.chevron_right),
+        onPressed: () {},
+        iconSize: 16,
+      ),
     );
   }
 }

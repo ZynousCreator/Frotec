@@ -10,19 +10,24 @@ class Login extends StatelessWidget {
         title: const Text("Login"),
       ),
       body: Container(
-        padding: const EdgeInsets.symmetric(
-          vertical: 16,
-          horizontal: 16,
-        ),
-        child: Column(
-          children: [
-            const Padding(
-              padding: EdgeInsets.symmetric(vertical: 20),
-              child: Text("Login"),
-            ),
-          ],
-        ),
+        // padding: const EdgeInsets.symmetric(
+        //   vertical: 16,
+        //   horizontal: 16,
+        // ),
+        // child: Column(
+        //   children: [
+        //     Card(
+        //       child: Padding(padding: const EdgeInsets.all(16),
+        //       child: Row(
+        //         children: [titleText],
+        //       ),),
+        //     )
+        //   ],
+        // ),
       ),
     );
   }
+  // Text loginText({
+  //   required String Text
+  // })
 }

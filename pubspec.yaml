@@ -1,19 +1,22 @@
-name: frotec
+name: agenda_de_contatos
 description: A new Flutter project.
-publish_to: 'none'
+publish_to: "none"
 version: 0.1.0
 
 environment:
-  sdk: '>=2.19.3 <3.0.0'
+  sdk: ">=3.0.0-339.0.dev <4.0.0"
 
 dependencies:
+  email_validator: ^2.1.17
   flutter:
     sdk: flutter
+  flutter_masked_text2: ^0.9.1
+  sqflite: ^2.2.6
 
 dev_dependencies:
+  flutter_lints: ^2.0.0
   flutter_test:
     sdk: flutter
-  flutter_lints: ^2.0.0
 
 flutter:
   uses-material-design: true
